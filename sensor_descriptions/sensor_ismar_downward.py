@@ -1,4 +1,6 @@
-import numpy as np
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: obobryshev
 
 # sensor_descriptions/sensor_ismar_downward.py
 def sensor_ismar_downward(ws):
@@ -18,22 +20,24 @@ def sensor_ismar_downward(ws):
        met_mm_freq_spacing
        met_mm_antenna
     """
+    import numpy as np
+
     dlos = [
-         -180.00, #0  
-         -170.00, #1 
-         -110.00, #2   
-          -50.00, #3   
-          -40.00, #4   
-          -30.00, #5   
-          -20.00, #6   
-          -10.00, #7     
-            0.00, #8 (nadir)    
-           10.00, #9    
-           70.00, #10   
-          140.00, #11   
-          150.00, #12   
-          160.00, #13   
-          170.00, #14 
+         -180.00,  #0
+         -170.00,  #1
+         -110.00,  #2
+          -50.00,  #3
+          -40.00,  #4
+          -30.00,  #5
+          -20.00,  #6
+          -10.00,  #7
+            0.00,  #8 (nadir)
+           10.00,  #9
+           70.00,  #10
+          140.00,  #11
+          150.00,  #12
+          160.00,  #13
+          170.00,  #14
     ]
     
     ws.MatrixSet(ws.antenna_dlos, np.array([dlos]).T)

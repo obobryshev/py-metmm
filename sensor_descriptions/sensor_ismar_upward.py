@@ -1,4 +1,6 @@
-import numpy as np
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: obobryshev
 
 # sensor_descriptions/sensor_ismar_upward.py   
 def sensor_ismar_upward(ws):
@@ -18,6 +20,8 @@ def sensor_ismar_upward(ws):
        met_mm_freq_spacing
        met_mm_antenna
     """
+    import numpy as np
+
     dlos = [
         -180.00, #0  
         -170.00, #1 

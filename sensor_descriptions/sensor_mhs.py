@@ -1,4 +1,6 @@
-import numpy as np
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: obobryshev
 
 # sensor_descriptions/sensor_mhs.py
 def sensor_mhs(ws):
@@ -25,6 +27,8 @@ def sensor_mhs(ws):
     Viewing angles
     There are 45 different angles, corresponding to one side of the MHS scan.
     """
+    import numpy as np
+
     dlos = [
         -49.444444, #0 (off-nadir)
         -48.333333, #1

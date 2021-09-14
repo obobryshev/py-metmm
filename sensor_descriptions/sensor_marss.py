@@ -1,4 +1,6 @@
-import numpy as np
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: obobryshev
 
 # sensor_descriptions/sensor_marss.py
 def sensor_marss(ws):
@@ -18,6 +20,8 @@ def sensor_marss(ws):
        met_mm_freq_spacing
        met_mm_antenna
     """
+    import numpy as np
+
     dlos = [
         -52.777777, #0 (off-nadir)
         -51.666666, #1

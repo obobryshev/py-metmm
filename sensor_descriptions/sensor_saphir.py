@@ -1,4 +1,6 @@
-import numpy as np
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: obobryshev
 
 # sensor_descriptions/sensor_saphir.py   
 def sensor_saphir(ws):
@@ -27,6 +29,8 @@ def sensor_saphir(ws):
     between pixels is always 0.66:
     https://cnes.fr/fr/media/20130117level-1productdefed3rev4pdf
     """
+    import numpy as np
+
     dlos = [
         -42.96, #0 (off-nadir)
         -42.30, #1

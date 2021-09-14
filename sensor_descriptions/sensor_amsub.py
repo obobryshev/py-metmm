@@ -93,11 +93,11 @@ def sensor_amsub(ws):
     ws.ArrayOfStringSet(
         ws.met_mm_polarisation, 
         [
-            "AMSU-V", #0 (16)
-            "AMSU-V", #1 (17)
-            "AMSU-V", #2 (18)
-            "AMSU-V", #3 (19)
-            "AMSU-V", #4 (20)
+            "AMSU-V",  #0 (16)
+            "AMSU-V",  #1 (17)
+            "AMSU-V",  #2 (18)
+            "AMSU-V",  #3 (19)
+            "AMSU-V",  #4 (20)
         ])
     # Antenna is not supported for now     
     ws.Touch(ws.met_mm_antenna)
@@ -143,6 +143,7 @@ def sensor_amsub(ws):
     ws.nrowsGet(ws.nrows, ws.met_mm_backend)
     ws.VectorSetConstant(ws.met_mm_freq_spacing, ws.nrows, ws.current_spacing)
     ws.Delete(ws.current_spacing)
+
 
 if __name__ == "__main__":
     pass

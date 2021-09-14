@@ -1,4 +1,6 @@
-import numpy as np
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: obobryshev
 
 # sensor_descriptions/sensor_mwhs2.py   
 def sensor_mwhs2(ws):
@@ -24,6 +26,8 @@ def sensor_mwhs2(ws):
     # https://directory.eoportal.org/web/eoportal/satellite-missions/f/fy-3#3Y4Y413eKram
     # There are 48 different angles, corresponding to one side of the MWHS-2 scan.
     """
+    import numpy as np
+
     dlos = [
         -53.3500,  #0 (off-nadir)
         -52.2500,  #1

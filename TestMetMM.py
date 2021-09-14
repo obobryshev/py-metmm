@@ -21,10 +21,11 @@ Returns:
 """
 
 
-def main():
+def testmetmm(sensor_name="sensor_amsub"):
     import pyarts as py
-    import pyarts.workspace
-    import sensor_descriptions.sensor_amsub as sensor
+    import sensor_descriptions
+    #import importlib
+    #sensor_d = importlib.import_module("sensor_descriptions." + "sensor_amsub")
 
     verbosity = 2
     ws = py.workspace.Workspace(verbosity)
@@ -63,7 +64,7 @@ def main():
     ws.IndexCreate("met_mm_nchannels")
 
     # sensor_descriptions/sensor_amsub.arts
-    sensor.sensor_amsub(ws)
+    getattr(sensor_descriptions, sensor_name)(ws)
 
     ########    apply_metmm.arts
     ws.Select(ws.antenna_dlos, ws.antenna_dlos, ws.viewing_angles)
@@ -78,7 +79,7 @@ def main():
 
     ws.sensor_responseMetMM()
 
-    ########    common_metmm.arts
+    #    common_metmm.arts
     ws.output_file_formatSetZippedAscii()
     ws.NumericSet(ws.ppath_lmax, float(250))
 
@@ -108,11 +109,12 @@ def main():
 
     # Set propmat_clearsky_agenda to use lookup table
     ws.Copy(ws.propmat_clearsky_agenda, ws.propmat_clearsky_agenda__LookUpTable)
+    #ws.Copy(ws.propmat_clearsky_agenda, ws.propmat_clearsky_agenda__OnTheFly)
 
     # Spectroscopy
     species = [
         "H2O, H2O-SelfContCKDMT252, H2O-ForeignContCKDMT252",
-        "O2-TRE05",
+        "O2-66, O2-CIAfunCKDMT100",
         "N2,  N2-CIAfunCKDMT252, N2-CIArotCKDMT252",
         "O3",
     ]
@@ -197,7 +199,7 @@ def main():
     # Execute the batch calculations:
     # First check, then execute the batch RT calculations
     ws.propmat_clearsky_agenda_checkedCalc()
-    ws.ybatchCalc()
+    ws.ybatchCalc(robust=1)
     # ====================================================================
 
     # Store results
@@ -210,11 +212,32 @@ def main():
 
     ws.Compare( ws.ybatch, ws.ybatch_ref, 0.01,
          "Total BT should be close to the reference values")
-    
+
     print("Success! We reached the finish!")
 
 
 if __name__ == "__main__":
-    print("1")
-    print("2")
-    main()
+    # normal way to run
+    testmetmm(sensor_name="sensor_amsub")
+
+    # test all sensors
+    if 1==0:
+        list = [
+            "sensor_amsua",
+            "sensor_amsub",
+            "sensor_atms",
+            "sensor_deimos",
+            "sensor_hatpro",
+            "sensor_ismar_downward",
+            "sensor_upward",
+            "sensor_marss",
+            "sensor_mhs",
+            "sensor_mwhs2",
+            "sensor_saphir"
+        ]
+        for name in nlist:
+            testmetmm(sensor_name=name)
+
+
+
+

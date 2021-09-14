@@ -82,7 +82,7 @@ def sensor_hatpro(ws):
             12, #15 (H-16)
          ])
     
-    ws.VectorSet(ws.freq_spacing_tmp, np.array([1e3] * 16))
+    ws.VectorSet(ws.freq_spacing_tmp, np.array([1e9] * 16))
     
     ws.Extract(ws.current_spacing, ws.freq_spacing_tmp, ws.met_mm_accuracy)
 
