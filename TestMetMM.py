@@ -20,13 +20,12 @@ Parameters:
 Returns:
 """
 
-import numpy as np
-import pyarts as py
-import pyarts.workspace
-
-import sensor_descriptions.sensor_amsub as sensor
 
 def main():
+    import pyarts as py
+    import pyarts.workspace
+    import sensor_descriptions.sensor_amsub as sensor
+
     verbosity = 2
     ws = py.workspace.Workspace(verbosity)
     ws.execute_controlfile("general/general.arts")
@@ -216,4 +215,6 @@ def main():
 
 
 if __name__ == "__main__":
+    print("1")
+    print("2")
     main()

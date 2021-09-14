@@ -1,4 +1,3 @@
-import numpy as np
 
 
 # sensor_descriptions/sensor_hatpro.py
@@ -10,6 +9,7 @@ def sensor_hatpro(ws):
     Viewing angles( !Caution ground-based instrument! )
     This instrument has only 1 viewing angle
     """
+    import numpy as np
 
     dlos = [180.0]  #0 (zenith)
         
@@ -93,5 +93,5 @@ def sensor_hatpro(ws):
     ws.Delete(ws.current_spacing)
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     pass

@@ -1,7 +1,13 @@
-import numpy as np
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: obobryshev
 
-# sensor_descriptions/sensor_amsua.py
 def sensor_amsua(ws):
+    """
+    # sensor_descriptions/sensor_amsua.py
+    """
+    import numpy as np
+
     dlos = [
         -48.330000, #0
         -44.996897, #1
@@ -128,5 +134,5 @@ def sensor_amsua(ws):
     ws.Delete(ws.current_spacing)
    
 
-if __name__ == "main":
+if __name__ == "__main__":
     pass   

@@ -146,5 +146,5 @@ def sensor_mwhs2(ws):
     ws.Delete(ws.current_spacing)   
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     pass

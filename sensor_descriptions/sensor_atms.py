@@ -1,4 +1,3 @@
-import numpy as np
 
 # sensor_descriptions/sensor_atms.py   
 def sensor_atms(ws):
@@ -24,6 +23,8 @@ def sensor_atms(ws):
     Viewing angles
     There are 48 different angles, corresponding to one side of the ATMS scan.
     """
+    import numpy as np
+
     dlos = [
         -52.777777, #0 (off-nadir)
         -51.666666, #1
@@ -158,5 +159,5 @@ def sensor_atms(ws):
     ws.Delete(ws.current_spacing)   
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     pass

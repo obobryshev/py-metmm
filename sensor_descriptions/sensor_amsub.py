@@ -1,6 +1,6 @@
-import numpy as np
+# -*- coding: utf-8 -*-
+# author: obobryshev
 
-# sensor_descriptions/sensor_amsub.py   
 def sensor_amsub(ws):
     """
     ARTS sensor description for AMSU-B simulations
@@ -25,6 +25,8 @@ def sensor_amsub(ws):
     Viewing angles
     There are 45 different angles, corresponding to one side of the AMSU-B Scan.
     """
+    import numpy as np
+
     dlos = [
         -48.95,  #0 (off-nadir)
         -47.85,  #1
@@ -142,5 +144,5 @@ def sensor_amsub(ws):
     ws.VectorSetConstant(ws.met_mm_freq_spacing, ws.nrows, ws.current_spacing)
     ws.Delete(ws.current_spacing)
 
-if __name__ == "main":
+if __name__ == "__main__":
     pass

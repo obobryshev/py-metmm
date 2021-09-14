@@ -1,9 +1,9 @@
-import numpy as np
 
 # sensor_descriptions/sensor_deimos.arts   
 def sensor_deimos(ws):
     ws.Error("The MetMM file for DEIMOS is not yet finalised!!!")
-    
+    import numpy as np
+
     dlos = []
         
     ws.MatrixSet(ws.antenna_dlos, np.array( [dlos] ).T )
@@ -49,5 +49,5 @@ def sensor_deimos(ws):
     ws.Delete(ws.current_spacing)   
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     pass
