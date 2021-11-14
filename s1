@@ -1,1 +1,2 @@
 auth_server
+sdn_server: 192.168.1.1
