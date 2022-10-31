@@ -1,0 +1,11 @@
+name: py_metmm
+dependencies:
+    - python>=3.9
+    - pytest
+    - sphinx
+    - netCDF4
+    - xarray
+    - pandas
+    - matplotlib
+    - cartopy
+    - cdsapi
